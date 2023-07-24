@@ -23,3 +23,11 @@ class ResponsableForm(forms.ModelForm):
             )
         }
 
+
+from ckeditor.widgets import CKEditorWidget
+from django import forms
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = '__all__'

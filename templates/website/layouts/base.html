@@ -74,19 +74,20 @@
 
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-success"> <img src="{% static 'website/img/csu.webp" width="35" alt=""> </i>CTN - CSU</h1>
+            <h1 class="m-0 text-success"> <img src="{% static 'website/img/csu.webp' %}" width="35" alt=""> </i>CTN - CSU</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Acceuil</a>
-                <a href="about.html" class="nav-item nav-link">A Propos</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="service.html" class="nav-item nav-link">Actualités</a>
-                <a href="service.html" class="nav-item nav-link">Organigramme</a>
-                <a href="contact.html" class="nav-item nav-link">Contacts</a>
+                <a href="{% url 'home' %}" class="nav-item nav-link active">Acceuil</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link">A Propos</a>
+                <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
+                <a href="{% url 'actualite' %}" class="nav-item nav-link">Actualités</a>
+                <a href="{% url 'organigramme_display' %}" class="nav-item nav-link">Organigramme</a>
+                <a href="{% url 'Manuel_de_procédures' %}" class="nav-item nav-link">Manuel de procédures</a>
+                <a href="{% url 'contacts' %}" class="nav-item nav-link">Contacts</a>
             </div>
             <!-- <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             <a href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Appointment</a> -->

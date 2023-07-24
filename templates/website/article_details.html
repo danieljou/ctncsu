@@ -1,0 +1,16 @@
+{% extends 'website/layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <div class="h2"> {{article.Titre}} </div>
+        <div class="content my-5">
+            {{article.contetu | safe}}
+        </div>
+    </div>
+    <div class="h-400">
+        
+    </div>
+{% endblock content %}
+    

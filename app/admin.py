@@ -3,4 +3,5 @@ from .models import *
 
 admin.site.register(Grade)
 admin.site.register(Responsable)
+admin.site.register(Article)
 # Register your models here.

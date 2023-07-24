@@ -39,9 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'crispy_forms'
+    'crispy_forms',
+    'ckeditor',
+     'ckeditor_uploader',
+    
 ]
-
+MIME_TYPES = [
+    # ...
+    'application/pdf',
+    # ...
+]
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
