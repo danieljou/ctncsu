@@ -13,7 +13,7 @@ class Grade(models.Model):
 class Responsable(models.Model):
     
         Nom = models.CharField(max_length=100)
-        Image = models.ImageField( upload_to='user_grade')
+        Image = models.ImageField( upload_to='user_grade', blank=True, null=True)
         Description = models.CharField( max_length=100)
         titre = models.ForeignKey("Grade", on_delete=models.CASCADE)
     

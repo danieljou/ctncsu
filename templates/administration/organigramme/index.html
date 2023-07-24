@@ -1,6 +1,7 @@
 {% extends 'administration/layouts/base.html' %}
 {% load crispy_forms_tags %}
 
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 
 {% block title %}
     Organigramme
@@ -53,16 +54,18 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th>Nom</th>
+                                    <th>Description</th>
                                     <th>Grade</th>
-                                    <th>Titre</th>
                                     <th>Option</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                {% for item in grade %}
+                                {% for item in responsable %}
                                     <tr>
-                                        <td>{{item.niveau}}</td>
-                                        <td>{{item.Titre}}</td>
+                                        <td>{{item.Nom}}</td>
+                                        <td>{{item.Desctiption}}</td>
+                                        <td>{{item.titre}}</td>
                                         <td>Option</td>
                                     </tr>
                                 {% endfor %}

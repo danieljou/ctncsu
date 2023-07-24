@@ -22,6 +22,7 @@ def organigramme(request):
 
     if request.method == "POST":
         if form.is_valid():
+            
             form.save()
             messages.success(request, 'Enregistrement effectué avec succès')
             return redirect('organigramme')
@@ -30,15 +31,19 @@ def organigramme(request):
             messages.error(request, 'Tout les champ sont requis')
     context['form'] = form
     context['grade'] = Grade.objects.all()
+    context['responsable'] = Responsable.objects.all()
     return render(request, 'administration/organigramme/index.html', context)
 
 
 def responsable_create(request):
     if request.method == 'POST':
-        form = ResponsableForm(request.POST, request.FILES)
+        form = ResponsableForm(request.POST or None, request.FILES or None)
+        # print(form)
         if form.is_valid():
             form.save()
             return redirect('organigramme')
+        else:
+            print(form.errors)
     else:
         form = ResponsableForm()
     return render(request, 'administration/organigramme/addmembers.html', {'form': form})
